@@ -19,9 +19,17 @@ public class FishDao {
 	private Connection conn = null;
 	private PreparedStatement pstmt = null;
 	private ResultSet rs = null;
+	public static FishDao fishdao = null; // 자기 자신의 객체 주소 변수
 	
-	public FishDao(){
+	private FishDao(){
 		init();
+	}
+	// 싱글톤 기법 
+	public static FishDao getInstance() {
+		if(fishdao == null) {
+			fishdao = new FishDao();
+		}
+		return fishdao;
 	}
 	
 	private void init() {	// 드라이버 로드

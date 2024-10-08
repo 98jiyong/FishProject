@@ -10,7 +10,7 @@ public class FishService {
 	
 	Scanner sc = new Scanner(System.in);
 	// Fishdata 테이블에 데이터를 입력하기 위해서는 FishDao 객체에 의존한다.
-	FishDao fishdao = new FishDao();
+	FishDao fishdao = FishDao.getInstance();
 	public void menu() {
 		while(true) {
 			System.out.println("1. 등록 / 2. 수정 / 3. 삭제 / 4. 전체보기 / 5. 자세히보기 / 6. 종료");
